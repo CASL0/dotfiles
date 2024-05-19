@@ -2,5 +2,10 @@
   "editor.formatOnSave": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell",
+    "editor.semanticHighlighting.enabled": true
+  },
+  "powershell.codeFormatting.preset": "OTBS"
 }

@@ -1,3 +1,7 @@
 {
-  "recommendations": ["bat-snippets.bat-snippets", "esbenp.prettier-vscode"]
+  "recommendations": [
+    "bat-snippets.bat-snippets",
+    "esbenp.prettier-vscode",
+    "ms-vscode.powershell"
+  ]
 }
