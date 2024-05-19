@@ -25,3 +25,11 @@ tar -xzvf helmfile.tgz -C tmp
 copy /Y tmp\helmfile.exe bin 
 rmdir /S /Q tmp
 del /Q helmfile.tgz
+
+@REM helm-docs
+curl -Lo helm-docs.tgz https://github.com/norwoodj/helm-docs/releases/download/v1.13.1/helm-docs_1.13.1_Windows_x86_64.tar.gz
+if not exist "tmp" mkdir "tmp"
+tar -xzvf helm-docs.tgz -C tmp
+copy /Y tmp\helm-docs.exe bin 
+rmdir /S /Q tmp
+del /Q helm-docs.tgz
