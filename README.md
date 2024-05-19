@@ -4,8 +4,4 @@
 
 ### Windows
 
-コマンドプロンプトで以下を実行する。
-
-```bat
-install.bat
-```
+Powershell で`install.ps1`を実行してください。
