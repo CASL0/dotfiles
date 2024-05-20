@@ -7,5 +7,9 @@
     "editor.defaultFormatter": "ms-vscode.powershell",
     "editor.semanticHighlighting.enabled": true
   },
-  "powershell.codeFormatting.preset": "OTBS"
+  "powershell.codeFormatting.preset": "OTBS",
+  "[shellscript]": {
+    "files.eol": "\n",
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }
