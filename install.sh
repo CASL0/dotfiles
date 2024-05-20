@@ -2,7 +2,9 @@
 set -e
 
 # Homebrewのインストール
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if test ! "$(command -v brew)"; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 brew bundle --file ./Brewfile
 
 # asdfのプラグインインストール
