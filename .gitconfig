@@ -1,0 +1,7 @@
+[user]
+    name = CASL0
+    email = gin.0046.822@gmail.com
+[core]
+    autocrlf = input
+[submodule]
+    recurse = true
