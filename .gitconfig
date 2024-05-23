@@ -5,3 +5,5 @@
     autocrlf = input
 [submodule]
     recurse = true
+[ghq]
+    root=~/ghq
