@@ -27,24 +27,35 @@ function SetupHelmPlugins {
 
 .PARAMETER url
     インストール対象のバイナリのURL
+
 .PARAMETER binFileName
     バイナリのファイル名
 #>
 function InstallBin {
     param (
         [Parameter(Mandatory)][string]$url,
-        [Parameter(Mandatory)][string]$binFileName
+        [Parameter(Mandatory)][string]$binFileName,
+        [string]$type = "tar"
     )
-    Invoke-WebRequest `
-        $url `
-        -OutFile "_tarballToInstall.tgz"
     if (-Not (Test-Path "tmp")) {
         New-Item -ItemType Directory -Path "tmp"
     }
-    tar -xzvf "_tarballToInstall.tgz" -C "tmp"
+    if ($type -eq "tar") {
+        $outFile = "_tarballToInstall.tgz"
+    } elseif ($type -eq "zip") {
+        $outFile = "_zipToInstall.zip"
+    }
+    Invoke-WebRequest `
+        $url `
+        -OutFile $outFile
+    if ($type -eq "tar") {
+        tar -xzvf $outFile -C "tmp"
+    } elseif ($type -eq "zip") {
+        Expand-Archive -Path $outFile -DestinationPath "tmp"
+    }
     Copy-Item -Path "tmp\$binFileName" -Destination "bin" -Force
     Remove-Item -Path "tmp" -Recurse -Force
-    Remove-Item -Path "_tarballToInstall.tgz" -Force
+    Remove-Item -Path $outFile -Force
 }
 
 if (-Not (Test-Path "bin")) {
@@ -74,3 +85,7 @@ InstallBin `
 InstallBin `
     "https://github.com/norwoodj/helm-docs/releases/download/v1.13.1/helm-docs_1.13.1_Windows_x86_64.tar.gz" `
     "helm-docs.exe"
+InstallBin `
+    "https://github.com/x-motemen/ghq/releases/download/v1.6.1/ghq_windows_amd64.zip" `
+    "ghq_windows_amd64\ghq.exe" `
+    "zip"
