@@ -89,3 +89,13 @@ InstallBin `
     "https://github.com/x-motemen/ghq/releases/download/v1.6.1/ghq_windows_amd64.zip" `
     "ghq_windows_amd64\ghq.exe" `
     "zip"
+
+# dotfilesのシンボリックリンク
+$dotfiles = @(".gitconfig")
+$currentDir = (Get-Location).Path
+
+foreach ($file in $dotfiles) {
+    $sourcePath = Join-Path -Path $currentDir -ChildPath "$file"
+    $linkPath = Join-Path -Path (Resolve-Path ~) -ChildPath "$file"
+    New-Item -ItemType SymbolicLink -Path $linkPath -Target $sourcePath -Force
+}
