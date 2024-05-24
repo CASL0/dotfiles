@@ -15,6 +15,7 @@ brew "tree"
 brew "kubectl"
 brew "plantuml"
 brew "coturn"
+brew "ghq"
 
 cask "google-chrome"
 cask "jetbrains-toolbox"

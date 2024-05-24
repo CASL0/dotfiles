@@ -17,6 +17,7 @@ asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 DOT_FILES=(
     ".bash_profile"
     ".bashrc"
+    ".gitconfig"
 )
 for file in "${DOT_FILES[@]}"; do
     ln -sf "$(pwd)/$file" ~
