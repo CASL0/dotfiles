@@ -58,19 +58,6 @@ function InstallBin {
     Remove-Item -Path $outFile -Force
 }
 
-if (-Not (Test-Path "bin")) {
-    New-Item -ItemType Directory -Path "bin"
-    $currentDir = (Get-Location).Path
-    $oldPathValue = [Environment]::GetEnvironmentVariable(
-        "PATH",
-        [EnvironmentVariableTarget]::User
-    ) 
-    [Environment]::SetEnvironmentVariable(
-        "PATH", 
-        $oldPathValue + ";$currentDir\bin", 
-        [EnvironmentVariableTarget]::User
-    )
-}
 
 winget import packages.json `
     --accept-package-agreements `
@@ -79,16 +66,15 @@ winget import packages.json `
 
 SetupHelmPlugins
 
-InstallBin `
-    "https://github.com/helmfile/helmfile/releases/download/v0.164.0/helmfile_0.164.0_windows_amd64.tar.gz" `
-    "helmfile.exe"
-InstallBin `
-    "https://github.com/norwoodj/helm-docs/releases/download/v1.13.1/helm-docs_1.13.1_Windows_x86_64.tar.gz" `
-    "helm-docs.exe"
-InstallBin `
-    "https://github.com/x-motemen/ghq/releases/download/v1.6.1/ghq_windows_amd64.zip" `
-    "ghq_windows_amd64\ghq.exe" `
-    "zip"
+$oldPathValue = [Environment]::GetEnvironmentVariable(
+    "PATH",
+    [EnvironmentVariableTarget]::User
+) 
+[Environment]::SetEnvironmentVariable(
+    "PATH", 
+    $oldPathValue + ";$Env:LOCALAPPDATA\aquaproj-aqua\bat;$Env:LOCALAPPDATA\aquaproj-aqua\bin", 
+    [EnvironmentVariableTarget]::User
+)
 
 # dotfilesのシンボリックリンク
 $dotfiles = @(".gitconfig")
