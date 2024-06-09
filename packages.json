@@ -63,6 +63,9 @@
         },
         {
           "PackageIdentifier": "Valve.Steam"
+        },
+        {
+          "PackageIdentifier": "aquaproj.aqua"
         }
       ],
       "SourceDetails": {
