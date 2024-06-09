@@ -21,43 +21,6 @@ function SetupHelmPlugins {
     Remove-Item -Path "helm-diff.tgz" -Force
 }
 
-<#
-.SYNOPSIS
-    シングルバイナリのインストール
-
-.PARAMETER url
-    インストール対象のバイナリのURL
-
-.PARAMETER binFileName
-    バイナリのファイル名
-#>
-function InstallBin {
-    param (
-        [Parameter(Mandatory)][string]$url,
-        [Parameter(Mandatory)][string]$binFileName,
-        [string]$type = "tar"
-    )
-    if (-Not (Test-Path "tmp")) {
-        New-Item -ItemType Directory -Path "tmp"
-    }
-    if ($type -eq "tar") {
-        $outFile = "_tarballToInstall.tgz"
-    } elseif ($type -eq "zip") {
-        $outFile = "_zipToInstall.zip"
-    }
-    Invoke-WebRequest `
-        $url `
-        -OutFile $outFile
-    if ($type -eq "tar") {
-        tar -xzvf $outFile -C "tmp"
-    } elseif ($type -eq "zip") {
-        Expand-Archive -Path $outFile -DestinationPath "tmp"
-    }
-    Copy-Item -Path "tmp\$binFileName" -Destination "bin" -Force
-    Remove-Item -Path "tmp" -Recurse -Force
-    Remove-Item -Path $outFile -Force
-}
-
 
 winget import packages.json `
     --accept-package-agreements `
