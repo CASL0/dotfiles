@@ -76,6 +76,8 @@ $oldPathValue = [Environment]::GetEnvironmentVariable(
     [EnvironmentVariableTarget]::User
 )
 
+aqua i
+
 # dotfilesのシンボリックリンク
 $dotfiles = @(".gitconfig")
 $currentDir = (Get-Location).Path
