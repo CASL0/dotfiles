@@ -20,6 +20,9 @@
           "PackageIdentifier": "Terraform-docs.Terraform-docs"
         },
         {
+          "PackageIdentifier": "TerraformLinters.tflint"
+        },
+        {
           "PackageIdentifier": "Helm.Helm"
         },
         {
