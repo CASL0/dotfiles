@@ -69,6 +69,9 @@
         },
         {
           "PackageIdentifier": "aquaproj.aqua"
+        },
+        {
+          "PackageIdentifier": "RubyInstallerTeam.RubyWithDevKit.3.2"
         }
       ],
       "SourceDetails": {
