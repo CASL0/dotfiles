@@ -72,6 +72,9 @@
         },
         {
           "PackageIdentifier": "RubyInstallerTeam.RubyWithDevKit.3.2"
+        },
+        {
+          "PackageIdentifier": "OpenJS.NodeJS"
         }
       ],
       "SourceDetails": {
