@@ -8,8 +8,8 @@
 #   - all
 registries:
   - type: standard
-    ref: v4.191.0 # renovate: depName=aquaproj/aqua-registry
+    ref: v4.202.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-  - name: helmfile/helmfile@v0.165.0
-  - name: norwoodj/helm-docs@v1.13.1
+  - name: helmfile/helmfile@v0.166.0
+  - name: norwoodj/helm-docs@v1.14.2
   - name: x-motemen/ghq@v1.6.1

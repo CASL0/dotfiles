@@ -22,7 +22,7 @@ function SetupHelmPlugins {
 }
 
 
-winget import packages.json `
+winget import -i packages.json `
     --accept-package-agreements `
     --accept-source-agreements `
     --verbose
@@ -42,7 +42,7 @@ $oldPathValue = [Environment]::GetEnvironmentVariable(
     [EnvironmentVariableTarget]::User
 )
 
-aqua i
+aqua g -a
 
 # dotfilesのシンボリックリンク
 $dotfiles = @(".gitconfig")
