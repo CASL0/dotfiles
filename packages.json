@@ -75,6 +75,12 @@
         },
         {
           "PackageIdentifier": "OpenJS.NodeJS"
+        },
+        {
+          "PackageIdentifier": "OpenVPNTechnologies.OpenVPN"
+        },
+        {
+          "PackageIdentifier": "Amazon.AWSVPNClient"
         }
       ],
       "SourceDetails": {
