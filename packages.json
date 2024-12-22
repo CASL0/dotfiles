@@ -81,6 +81,9 @@
         },
         {
           "PackageIdentifier": "Amazon.AWSVPNClient"
+        },
+        {
+          "PackageIdentifier": "Hashicorp.Vagrant"
         }
       ],
       "SourceDetails": {
