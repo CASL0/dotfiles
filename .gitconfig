@@ -7,3 +7,5 @@
     recurse = true
 [ghq]
     root=~/ghq
+[pull]
+    rebase = true
