@@ -83,7 +83,7 @@
           "PackageIdentifier": "Amazon.AWSVPNClient"
         },
         {
-          "PackageIdentifier": "Hashicorp.Vagrant"
+          "PackageIdentifier": "RubyInstallerTeam.Ruby.3.2"
         }
       ],
       "SourceDetails": {
