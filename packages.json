@@ -84,6 +84,9 @@
         },
         {
           "PackageIdentifier": "RubyInstallerTeam.Ruby.3.2"
+        },
+        {
+          "PackageIdentifier": "LLVM.ClangFormat"
         }
       ],
       "SourceDetails": {
