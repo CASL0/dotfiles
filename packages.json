@@ -23,9 +23,6 @@
           "PackageIdentifier": "TerraformLinters.tflint"
         },
         {
-          "PackageIdentifier": "Helm.Helm"
-        },
-        {
           "PackageIdentifier": "Amazon.AWSCLI"
         },
         {
@@ -86,7 +83,7 @@
           "PackageIdentifier": "RubyInstallerTeam.Ruby.3.2"
         },
         {
-          "PackageIdentifier": "LLVM.ClangFormat"
+          "PackageIdentifier": "Microsoft.PowerShell"
         }
       ],
       "SourceDetails": {
