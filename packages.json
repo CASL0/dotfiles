@@ -84,6 +84,9 @@
         },
         {
           "PackageIdentifier": "Microsoft.PowerShell"
+        },
+        {
+          "PackageIdentifier": "jdx.mise"
         }
       ],
       "SourceDetails": {
